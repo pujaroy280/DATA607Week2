@@ -1,0 +1,38 @@
+---
+title: "DATA 607 Week2"
+author: "Puja Roy"
+output: html_document
+date: "2024-02-04"
+---
+### Part 3: Transfer data from SQL database to R dataframe
+
+```{r load-packages, message=FALSE}
+# Import the libraries
+library(RMySQL)
+library(DBI)
+```
+
+
+```{r}
+# Connect to the database
+con <- dbConnect(RMySQL::MySQL(),
+                 user = "puja.roy11",
+                 password = "puja.roy11",
+                 host = "cunydata607sql.mysql.database.azure.com",
+                 port = 3306,
+                 dbname = "puja.roy11")
+```
+
+```{r}
+# Query the data
+query <- "SELECT * FROM `puja.roy11`.mratings"
+df <- dbGetQuery(con, query)
+```
+
+```{r}
+# Close connection of the database
+dbDisconnect(con)
+```
+
+### Part 4: Missing data strategy
+To handle missing data, I can replace missing values with the mean or median of each column.
