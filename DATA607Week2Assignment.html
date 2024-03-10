@@ -371,7 +371,15 @@ con &lt;- dbConnect(RMySQL::MySQL(),
                  dbname = &quot;puja.roy11&quot;)</code></pre>
 <pre class="r"><code># Query the data
 query &lt;- &quot;SELECT * FROM `puja.roy11`.mratings&quot;
-df &lt;- dbGetQuery(con, query)</code></pre>
+df &lt;- dbGetQuery(con, query)
+print(df)</code></pre>
+<pre><code>##   id           movie_title person1 person2 person3 person4 person5
+## 1  1               Titanic       4       5       5       3       2
+## 2  2        Pretty in Pink       5       3       2       1       4
+## 3  3 To Kill a Mockingbird       2       1       4       3       2
+## 4  4          Pulp Fiction       3       5       3       4       5
+## 5  5      The Great Gatsby       5       4       2       3       1
+## 6  6           Bates Motel       3       4       2       5       1</code></pre>
 <pre class="r"><code># Close connection of the database
 dbDisconnect(con)</code></pre>
 <pre><code>## [1] TRUE</code></pre>

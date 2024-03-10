@@ -27,6 +27,7 @@ con <- dbConnect(RMySQL::MySQL(),
 # Query the data
 query <- "SELECT * FROM `puja.roy11`.mratings"
 df <- dbGetQuery(con, query)
+print(df)
 ```
 
 ```{r}
