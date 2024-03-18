@@ -362,13 +362,6 @@ display: none;
 <pre class="r"><code># Import the libraries
 library(RMySQL)
 library(DBI)</code></pre>
-<pre class="r"><code># Connect to the database
-con &lt;- dbConnect(RMySQL::MySQL(),
-                 user = &quot;puja.roy11&quot;,
-                 password = &quot;puja.roy11&quot;,
-                 host = &quot;cunydata607sql.mysql.database.azure.com&quot;,
-                 port = 3306,
-                 dbname = &quot;puja.roy11&quot;)</code></pre>
 <pre class="r"><code># Query the data
 query &lt;- &quot;SELECT * FROM `puja.roy11`.mratings&quot;
 df &lt;- dbGetQuery(con, query)
